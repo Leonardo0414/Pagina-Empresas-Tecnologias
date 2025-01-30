@@ -1,0 +1,7 @@
+.project-img{
+    width: 300px;
+    cursor: pointer;
+}
+.project-img:hover{
+ transform: scale(1.2);   
+}

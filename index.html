@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="modal fade" id="orcamentoModal" tabindex="-1" aria-labelledby="orcamentoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="orcamentoModalLabel">Solicitar Orçamento</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="instagram" class="form-label">Instagram</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="instagram-addon">@</span>
+                                <input type="text" class="form-control" id="instagram" placeholder="Instagram"
+                                    aria-label="Instagram" aria-describedby="instagram-addon">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="ramo" class="form-label">Ramo do seu Negócio</label>
+                            <input type="text" class="form-control" id="ramo" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="plano" class="form-label">Plano de Interesse</label>
+                            <select class="form-select" id="plano" required>
+                                <option value="" selected disabled>Escolha o plano...</option>
+                                <option value="platinum">Platinum</option>
+                                <option value="gold">Gold</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="porte" class="form-label">Qual é o porte da Empresa</label>
+                            <select class="form-select" id="porte" required>
+                                <option value="" selected disabled>Porte da Empresa...</option>
+                                <option value="pequena">Pequena</option>
+                                <option value="media">Média</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark py-4" data-bs-theme="dark">
+            <div class="container-fluid">
+                <img src="assets/logo.svg" alt="LP Tech" width="100">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#steps">Etapas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#benefits">Benefícios</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Planos
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Plano Platinum</a></li>
+                                <li><a class="dropdown-item" href="#">Plano Gold</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Projetos</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#faq">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orcamentoModal">
+                                Solicitar orçamento
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="banner" class="my-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center">
+                    <h1 class="fw-bold mt-3">A Melhor Solução Para Sua Empresa</h1>
+                    <p class="fw-bold">Nosso time desenvolverá a solução que você precisa para o seu negócio</p>
+                    <button type="button" class="btn btn-primary">Conheça Mais</button>
+                </div>
+                <div class="col-sm-12 col-md-6 d-flex">
+                    <img src="assets/business.jpg" alt="LP TECH" width="500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps">
+        <div class="container px-4">
+            <div class="row">
+                <h2 class="pb-2 border-bottom">Nossas Etapas</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <div class="my-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0b5ed7"
+                            class="bi bi-calendar3" viewBox="0 0 16 16">
+                            <path
+                                d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z" />
+                            <path
+                                d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                        </svg>
+                    </div>
+                    <h3 class="fs-2 text-primary-emphasis">Agendamentos</h3>
+                    <p>Você marca na nossa agenda para que possamos atender sua demanda</p>
+                    <a href="#" class="icon-link">Clique aqui para marcar</a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="my-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0b5ed7"
+                            class="bi bi-card-list" viewBox="0 0 16 16">
+                            <path
+                                d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2z" />
+                            <path
+                                d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8m0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0M4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+                        </svg>
+                    </div>
+                    <h3 class="fs-2 text-primary-emphasis">Propostas</h3>
+                    <p>Com a ideia compreendida, montaremos sua proposta</p>
+                    <a href="#" class="icon-link">Entenda como funciona</a>
+                </div>
+
+                <div class="col-sm-12 col-md-4">
+                    <div class="my-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0b5ed7"
+                            class="bi bi-chat-right-text" viewBox="0 0 16 16">
+                            <path
+                                d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" />
+                            <path
+                                d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    </div>
+                    <h3 class="fs-2 text-primary-emphasis">Início do Projeto</h3>
+                    <p>Com a proposta aceita, enviaremos uma mensagem para marcar uma reunião</p>
+                    <a href="#" class="icon-link">Clique aqui para marcar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="slider" class="my-4">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/banner-1.png" class="d-block w-100" alt="LP Tech">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/banner-2.png" class="d-block w-100" alt="LP Tech">
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="benefits" class="py-4">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="text-center text-primary">Benefícios</h2>
+                    <p class="text-center fs-4 text-secondary">Essas são as vantagens de trabalhar conosco</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/personalizado.png" alt="Personalização LP TECH" width="100"
+                            class="mx-auto my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Personalização</h5>
+                            <p class="card-text">
+                                Seu projeto será totalmente personalizado de acordo com sua marca. Desde as cores até os
+                                textos, para que faça sentido para o seu negócio.
+                            </p>
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/cliente.png" alt="Foco no Cliente LP TECH" width="100" class="mx-auto my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Foco no Cliente</h5>
+                            <p class="card-text">
+                                Nosso foco é atender suas necessidades e oferecer soluções eficazes que se alinhem ao
+                                seu
+                                negócio.
+                            </p>
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/suporte.png" alt="Suporte LP TECH" width="100" class="mx-auto my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Suporte</h5>
+                            <p class="card-text">
+                                Oferecemos suporte dedicado para que você tenha tranquilidade em todas as etapas do
+                                projeto.
+                            </p>
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/internet.png" alt="Globalização LP TECH" width="100" class="mx-auto my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Globalização</h5>
+                            <p class="card-text">
+                                Conecte-se ao mundo e amplie o alcance do seu negócio com nossas soluções inovadoras.
+                            </p>
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/seguranca.png" alt="Segurança LP TECH" width="70" class="mx-auto my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Segurança</h5>
+                            <p class="card-text">
+                                Garantimos a segurança dos seus dados e projetos, protegendo o que é mais importante
+                                para
+                                você.
+                            </p>
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/personalizado.png" alt="Personalizado LP TECH" width="100"
+                            class="mx-auto my-2">
+                        <div class="card-body">
+                            <h5 class="card-title">Personalizado</h5>
+                            <p class="card-text">
+                                Cada detalhe é pensado exclusivamente para atender suas necessidades e valorizar sua
+                                marca.
+                            </p>
+                            <a href="#" class="btn btn-primary">Saiba Mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans" class="bg-dark py-4" data-bs-theme="dark">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="text-center text-light">Planos</h2>
+                    <p class="text-center fs-4 text-light">Entenda como funcionam nossos planos</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-12 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Plano Platinum</h3>
+                            <h4 class="card-subtitle border-bottom fs-5 pb-2 mb-2">Benefícios do Plano</h4>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Até 1000 acessos por dia</li>
+                                <li class="list-group-item">5 emails personalizados</li>
+                                <li class="list-group-item">Sistema web, app iOS e Android inclusos</li>
+                                <li class="list-group-item">Suporte em até 5 horas</li>
+                                <li class="list-group-item">Domínio personalizado</li>
+                                <li class="list-group-item text-decoration-line-through">Acesso ao nosso time
+                                    especializado em marketing</li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orcamentoModal">
+                                    Fazer orçamento
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Plano Gold</h3>
+                            <h4 class="card-subtitle border-bottom fs-5 pb-2 mb-2">Benefícios do Plano</h4>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Até 500 acessos por dia</li>
+                                <li class="list-group-item">3 emails personalizados</li>
+                                <li class="list-group-item">Sistema web e app Android inclusos</li>
+                                <li class="list-group-item">Suporte em até 12 horas</li>
+                                <li class="list-group-item">Domínio personalizado</li>
+                                <li class="list-group-item text-decoration-line-through">Acesso ao nosso time
+                                    especializado em marketing</li>
+                            </ul>
+                            <div class="d-flex justify-content-center mt-3">
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orcamentoModal">
+                                    Fazer orçamento
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="my-4">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="text-center text-primary">Dúvidas Frequentes</h2>
+                    <p class="text-center text-secondary fs-4">Tire suas principais dúvidas sobre nossos serviços</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Como funciona o processo de desenvolvimento na LP Tech?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>Nossa metodologia de desenvolvimento é dividida em etapas claras e objetivas:</p>
+                                    <ol>
+                                        <li>Análise inicial das necessidades do seu negócio</li>
+                                        <li>Apresentação da proposta personalizada</li>
+                                        <li>Desenvolvimento do projeto com acompanhamento constante</li>
+                                        <li>Testes e validações</li>
+                                        <li>Entrega e suporte contínuo</li>
+                                    </ol>
+                                    <p>Mantemos uma comunicação transparente durante todo o processo para garantir que o
+                                        resultado final atenda perfeitamente às suas expectativas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Quais são os prazos médios de entrega dos projetos?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>O prazo de entrega varia de acordo com a complexidade do projeto e o plano
+                                        escolhido.
+                                        Em média:</p>
+                                    <ul>
+                                        <li>Projetos simples: 30 a 45 dias</li>
+                                        <li>Projetos médios: 45 a 90 dias</li>
+                                        <li>Projetos complexos: 90 a 180 dias</li>
+                                    </ul>
+                                    <p>Durante a fase de planejamento, estabelecemos um cronograma detalhado com marcos
+                                        específicos para acompanhamento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-dark py-4" data-bs-theme="dark">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="text-center text-light">Projetos</h2>
+                    <p class="text-center fs-4 text-light">Conheça algumas soluções que já entregamos</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div
+                    class="col-sm-12 col-md-4 d-flex flex-column justify-content-center align-items-center text-center">
+                    <img src="assets/project-1.png" alt="Sistema de Gestão - LPtech" class="d-block project-img">
+                    <p class="text-light border-bottom mt-2 pb-1">Sistema de Gestão Integrada - Empresa ABC</p>
+                </div>
+                <div
+                    class="col-sm-12 col-md-4 d-flex flex-column justify-content-center align-items-center text-center">
+                    <img src="assets/project-2.png" alt="E-commerce - LPtech" class="d-block project-img">
+                    <p class="text-light border-bottom mt-2 pb-1">Plataforma E-commerce - Empresa XYZ</p>
+                </div>
+                <div
+                    class="col-sm-12 col-md-4 d-flex flex-column justify-content-center align-items-center text-center">
+                    <img src="assets/project-3.png" alt="Aplicativo Mobile - LPtech" class="d-block project-img">
+                    <p class="text-light border-bottom mt-2 pb-1">Aplicativo Mobile - Empresa 123</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="my-4">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="text-center text-primary">Entre em Contato</h2>
+                    <p class="text-center text-secondary fs-4">Estamos prontos para atender você</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form class="row g-3">
+                        <div class="col-md-4">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="instagram" class="form-label">Instagram</label>
+                            <div class="input-group">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="instagram" placeholder="Seu Instagram">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="ramo" class="form-label">Ramo do seu Negócio</label>
+                            <input type="text" class="form-control" id="ramo" required>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label for="plano" class="form-label">Plano de Interesse</label>
+                            <select class="form-select" id="plano" required>
+                                <option value="" selected disabled>Escolha o plano...</option>
+                                <option value="platinum">Platinum</option>
+                                <option value="gold">Gold</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="porte" class="form-label">Porte da Empresa</label>
+                            <select class="form-select" id="porte" required>
+                                <option value="" selected disabled>Selecione o porte...</option>
+                                <option value="pequena">Pequena</option>
+                                <option value="media">Média</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <button class="btn btn-primary" type="submit">Enviar Mensagem</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between flex-column flex-md-row text-center text-md-start">
+                        <p><strong class="me-2">Endereço:</strong> Rua das Tecnologias , xxxxxxx</p>
+                        <p><strong class="me-2">Telefone:</strong> (49) 9999-9999</p>
+                        <p><strong class="me-2">Email:</strong> email</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark py-4 mt-4" data-bs-theme="dark">
+        <div class="container">
+            <nav>
+                <ul class="nav d-flex justify-content-center border-bottom pb-3 mb-3">
+                    <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+                    <li class="nav-item"><a href="#steps" class="nav-link px-2 text-body-secondary">Etapas</a></li>
+                    <li class="nav-item"><a href="#benefits" class="nav-link px-2 text-body-secondary">Benefícios</a>
+                    </li>
+                    <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">Projetos</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link px-2 text-body-secondary">FAQ</a></li>
+                </ul>
+            </nav>
+            <p class="text-center text-body-secondary">&copy; 2025 LP Tech - Transformando ideias em soluções digitais
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
